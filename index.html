@@ -1,91 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>My Papers</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f0f0;
+      font-family: sans-serif;
+      background: #fff;
+      color: #222;
       margin: 2em;
     }
     .paper {
-      margin-bottom: 2em;
-      padding: 1em;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+      margin-bottom: 1.5em;
     }
-    .link-box {
-      display: inline-block;
-      padding: 0.7em 1em;
-      background: #2980b9;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-      margin: 0.5em 0;
+    .paper-title {
       font-weight: bold;
-      transition: background 0.2s;
     }
-    .link-box:hover {
-      background: #1c5d8f;
+    .link {
+      color: #0059b2;
+      text-decoration: underline;
+      margin-right: 1em;
     }
-    .abstract-box {
-      display: inline-block;
-      padding: 0.7em 1em;
-      background: #27ae60;
-      color: #fff;
-      border-radius: 5px;
-      margin-left: 1em;
+    .toggle-abstract {
+      color: #008000;
       cursor: pointer;
-      margin: 0.5em 0;
-      font-weight: bold;
-      transition: background 0.2s;
+      text-decoration: underline;
+      margin-right: 1em;
     }
-    .abstract-box:hover {
-      background: #1e854a;
-    }
-    .abstract-content {
-      display: none; /* hidden by default */
-      background: #eafaf1;
-      color: #222;
-      margin: 1em 0 0 0;
-      padding: 0.7em 1em;
-      border-radius: 6px;
-      border-left: 4px solid #27ae60;
+    .abstract {
+      display: none;
+      margin-top: 0.3em;
+      margin-left: 1em;
     }
   </style>
 </head>
 <body>
-
   <h2>My Papers</h2>
-  
+
   <!-- Paper 1 -->
   <div class="paper">
-    <div>
-      <a class="link-box" href="https://arxiv.org/abs/1234.5678" target="_blank">📄 Citation Link</a>
-      <span class="abstract-box" onclick="toggleAbstract(this, 'abs1')">🔎 Abstract</span>
-    </div>
-    <div id="abs1" class="abstract-content">
+    <span class="paper-title">Paper 1 Title</span><br>
+    <a class="link" href="https://arxiv.org/abs/1234.5678" target="_blank">[External Link]</a>
+    <span class="toggle-abstract" onclick="toggleAbstract('abs1')">[Show abstract]</span>
+    <div id="abs1" class="abstract">
       This is the abstract for Paper 1. It explains the main findings and contributions of the work.
     </div>
   </div>
-  
+
   <!-- Paper 2 -->
   <div class="paper">
-    <div>
-      <a class="link-box" href="https://arxiv.org/abs/2345.6789" target="_blank">📄 Citation Link</a>
-      <span class="abstract-box" onclick="toggleAbstract(this, 'abs2')">🔎 Abstract</span>
-    </div>
-    <div id="abs2" class="abstract-content">
+    <span class="paper-title">Paper 2 Title</span><br>
+    <a class="link" href="https://arxiv.org/abs/2345.6789" target="_blank">[External Link]</a>
+    <span class="toggle-abstract" onclick="toggleAbstract('abs2')">[Show abstract]</span>
+    <div id="abs2" class="abstract">
       Abstract for Paper 2 goes here. Describes method, results, and discussion.
     </div>
   </div>
 
   <script>
-    function toggleAbstract(element, absId) {
-      var absDiv = document.getElementById(absId);
-      absDiv.style.display = (absDiv.style.display === "none" || absDiv.style.display === "") ? "block" : "none";
+    function toggleAbstract(id) {
+      var el = document.getElementById(id);
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
     }
   </script>
 </body>
