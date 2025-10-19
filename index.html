@@ -6,15 +6,15 @@
   <style>
     body {
       font-family: sans-serif;
-      background: #fff;
+      background: #e6f2ff; /* light blue */
       color: #222;
       margin: 2em;
     }
     .self-intro {
       margin-bottom: 0.5em;
     }
-    .cv-link {
-      color: #0059b2;
+    .cv-link, .link, .code-link {
+      color: #1a4b7a; /* medium navy blue */
       text-decoration: underline;
       font-weight: bold;
     }
@@ -34,10 +34,13 @@
     .paper-title, .code-title {
       font-weight: bold;
     }
-    .link, .code-link {
-      color: #0059b2;
-      text-decoration: underline;
-      margin-right: 1em;
+    .journal-line {
+      display: block;
+      font-weight: bold;
+      font-style: italic;
+      color: #244466; /* medium dark navy blue */
+      margin-top: 0.2em;
+      margin-bottom: 0.4em;
     }
     .toggle-abstract {
       color: #008000;
@@ -47,8 +50,12 @@
     }
     .abstract {
       display: none;
+      background: #222; /* dark grey */
+      color: #fafafa;
       margin-top: 0.3em;
       margin-left: 1em;
+      padding: 0.6em 1em;
+      border-radius: 6px;
     }
   </style>
 </head>
@@ -70,7 +77,8 @@
 
     <!-- Paper 1 -->
     <div class="paper">
-      <span class="paper-title">Paper 1 Title</span><br>
+      <span class="paper-title">Paper 1 Title</span>
+      <span class="journal-line">Under review at *Journal of Advanced Research*</span>
       <a class="link" href="https://arxiv.org/abs/1234.5678" target="_blank">[External Link]</a>
       <span class="toggle-abstract" onclick="toggleAbstract('abs1')">[Show abstract]</span>
       <div id="abs1" class="abstract">
@@ -80,7 +88,8 @@
 
     <!-- Paper 2 -->
     <div class="paper">
-      <span class="paper-title">Paper 2 Title</span><br>
+      <span class="paper-title">Paper 2 Title</span>
+      <span class="journal-line">Under review at *International Conference on Data Science*</span>
       <a class="link" href="https://arxiv.org/abs/2345.6789" target="_blank">[External Link]</a>
       <span class="toggle-abstract" onclick="toggleAbstract('abs2')">[Show abstract]</span>
       <div id="abs2" class="abstract">
