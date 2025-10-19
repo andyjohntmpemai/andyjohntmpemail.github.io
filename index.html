@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>My Papers</title>
+  <title>Your Name - CV & Papers</title>
   <style>
     body {
       font-family: sans-serif;
@@ -10,13 +10,31 @@
       color: #222;
       margin: 2em;
     }
-    .paper {
-      margin-bottom: 1.5em;
+    .self-intro {
+      margin-bottom: 0.5em;
     }
-    .paper-title {
+    .cv-link {
+      color: #0059b2;
+      text-decoration: underline;
       font-weight: bold;
     }
-    .link {
+    hr {
+      border: 0;
+      border-top: 1px solid #bbb;
+      margin: 1.5em 0;
+    }
+    .section-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 0.7em;
+    }
+    .paper, .code {
+      margin-bottom: 1.2em;
+    }
+    .paper-title, .code-title {
+      font-weight: bold;
+    }
+    .link, .code-link {
       color: #0059b2;
       text-decoration: underline;
       margin-right: 1em;
@@ -35,28 +53,60 @@
   </style>
 </head>
 <body>
-  <h2>My Papers</h2>
+  <!-- Self Intro and CV -->
+  <div class="self-intro">
+    <span style="font-size:1.5em; font-weight:bold;">Your Name</span><br>
+    <span>PhD Student at X University</span><br>
+    <span>My research focuses on Y, Z, and A. I enjoy exploring B and working on C.</span><br>
+    <a class="cv-link" href="cv.pdf" target="_blank">[Download CV]</a>
+  </div>
+  
+  <!-- Divider -->
+  <hr>
 
-  <!-- Paper 1 -->
-  <div class="paper">
-    <span class="paper-title">Paper 1 Title</span><br>
-    <a class="link" href="https://arxiv.org/abs/1234.5678" target="_blank">[External Link]</a>
-    <span class="toggle-abstract" onclick="toggleAbstract('abs1')">[Show abstract]</span>
-    <div id="abs1" class="abstract">
-      This is the abstract for Paper 1. It explains the main findings and contributions of the work.
+  <!-- Papers Section -->
+  <div>
+    <div class="section-title">Papers</div>
+
+    <!-- Paper 1 -->
+    <div class="paper">
+      <span class="paper-title">Paper 1 Title</span><br>
+      <a class="link" href="https://arxiv.org/abs/1234.5678" target="_blank">[External Link]</a>
+      <span class="toggle-abstract" onclick="toggleAbstract('abs1')">[Show abstract]</span>
+      <div id="abs1" class="abstract">
+        This is the abstract for Paper 1. It explains the main findings and contributions of the work.
+      </div>
+    </div>
+
+    <!-- Paper 2 -->
+    <div class="paper">
+      <span class="paper-title">Paper 2 Title</span><br>
+      <a class="link" href="https://arxiv.org/abs/2345.6789" target="_blank">[External Link]</a>
+      <span class="toggle-abstract" onclick="toggleAbstract('abs2')">[Show abstract]</span>
+      <div id="abs2" class="abstract">
+        Abstract for Paper 2 goes here. Describes method, results, and discussion.
+      </div>
     </div>
   </div>
 
-  <!-- Paper 2 -->
-  <div class="paper">
-    <span class="paper-title">Paper 2 Title</span><br>
-    <a class="link" href="https://arxiv.org/abs/2345.6789" target="_blank">[External Link]</a>
-    <span class="toggle-abstract" onclick="toggleAbstract('abs2')">[Show abstract]</span>
-    <div id="abs2" class="abstract">
-      Abstract for Paper 2 goes here. Describes method, results, and discussion.
+  <!-- Code Section -->
+  <div>
+    <div class="section-title">Code</div>
+    <!-- Code 1 -->
+    <div class="code">
+      <span class="code-title">Project Alpha</span><br>
+      <a class="code-link" href="https://github.com/yourusername/project-alpha" target="_blank">[GitHub Link]</a>
+      <span>A Python library for X.</span>
+    </div>
+    <!-- Code 2 -->
+    <div class="code">
+      <span class="code-title">Project Beta</span><br>
+      <a class="code-link" href="https://github.com/yourusername/project-beta" target="_blank">[GitHub Link]</a>
+      <span>A small experiment for Y.</span>
     </div>
   </div>
 
+  <!-- Abstract toggle JS -->
   <script>
     function toggleAbstract(id) {
       var el = document.getElementById(id);
