@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Your Name - CV & Papers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive meta -->
   <style>
     body {
       font-family: sans-serif;
       background: #e6f2ff; /* light blue */
       color: #222;
-      margin: 2em;
+      margin: 4vw;
+      max-width: 700px;
+      line-height: 1.5;
     }
     .self-intro {
       margin-bottom: 0.5em;
     }
     .cv-link, .link, .code-link {
-      color: #1a4b7a; /* medium navy blue */
+      color: #1a4b7a;
       text-decoration: underline;
       font-weight: bold;
     }
@@ -24,21 +27,23 @@
       margin: 1.5em 0;
     }
     .section-title {
-      font-size: 1.2em;
+      font-size: 1.1em;
       font-weight: bold;
       margin-bottom: 0.7em;
+      margin-top: 2em;
     }
     .paper, .code {
-      margin-bottom: 1.2em;
+      margin-bottom: 1.3em;
     }
     .paper-title, .code-title {
       font-weight: bold;
+      word-break: break-word;
     }
     .journal-line {
       display: block;
       font-weight: bold;
       font-style: italic;
-      color: #244466; /* medium dark navy blue */
+      color: #244466;
       margin-top: 0.2em;
       margin-bottom: 0.4em;
     }
@@ -47,15 +52,41 @@
       cursor: pointer;
       text-decoration: underline;
       margin-right: 1em;
+      font-size: 0.97em;
     }
     .abstract {
       display: none;
-      background: #222; /* dark grey */
+      background: #222;
       color: #fafafa;
       margin-top: 0.3em;
-      margin-left: 1em;
+      margin-left: 0em;
       padding: 0.6em 1em;
       border-radius: 6px;
+      font-size: 0.99em;
+      word-break: break-word;
+    }
+
+    /* Responsive design tweaks */
+    @media (max-width: 600px) {
+      body {
+        margin: 3vw 2vw;
+        max-width: 98vw;
+        font-size: 1em;
+      }
+      .section-title {
+        font-size: 1.05em;
+      }
+      .self-intro span {
+        display: block;
+        margin-bottom: 0.2em;
+      }
+      .abstract {
+        padding: 0.6em 0.5em;
+        font-size: 0.98em;
+      }
+      hr {
+        margin: 1em 0;
+      }
     }
   </style>
 </head>
@@ -78,7 +109,7 @@
     <!-- Paper 1 -->
     <div class="paper">
       <span class="paper-title">Paper 1 Title</span>
-      <span class="journal-line">Under review at *Journal of Advanced Research*</span>
+      <span class="journal-line">Under review at <em>Journal of Advanced Research</em></span>
       <a class="link" href="https://arxiv.org/abs/1234.5678" target="_blank">[External Link]</a>
       <span class="toggle-abstract" onclick="toggleAbstract('abs1')">[Show abstract]</span>
       <div id="abs1" class="abstract">
@@ -89,7 +120,7 @@
     <!-- Paper 2 -->
     <div class="paper">
       <span class="paper-title">Paper 2 Title</span>
-      <span class="journal-line">Under review at *International Conference on Data Science*</span>
+      <span class="journal-line">Under review at <em>International Conference on Data Science</em></span>
       <a class="link" href="https://arxiv.org/abs/2345.6789" target="_blank">[External Link]</a>
       <span class="toggle-abstract" onclick="toggleAbstract('abs2')">[Show abstract]</span>
       <div id="abs2" class="abstract">
